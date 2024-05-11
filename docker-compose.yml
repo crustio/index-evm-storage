@@ -1,0 +1,12 @@
+version: "3"
+name: "index-evm-storage"
+services:
+  db:
+    image: mysql:lts
+
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
